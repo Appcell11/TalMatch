@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Datos Personales</title>
+    <link rel="stylesheet" href="registro_personal.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo TalMatch -->
+        <img src="imagenes/talmach.jpg" alt="TalMatch Logo" class="logo">
+
+        <!-- Título pantalla -->
+        <h2>Crear Cuenta/Datos personales</h2>
+
+        <form>
+            <!-- Fila de foto de perfil + nombres, apellidos, fecha -->
+            <div class="row">
+                <!-- Foto de perfil -->
+                <div class="upload-photo">
+                    <label for="profile-photo">
+                        <img src="imagenes/adjuntar foto.PNG" alt="Foto de perfil">
+                    </label>
+                    <input type="file" id="profile-photo">
+                    <span class="label-text">Foto de perfil</span>
+                </div>
+
+                <div class="triple-input">
+                    <div class="input-wrapper">
+                        <input type="text" class="input-field" placeholder="Nombres" required/>
+                        <span class="label-text">Nombres</span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" class="input-field" placeholder=""required/>
+                        <span class="label-text">Apellidos</span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="date" class="input-field">
+                        <span class="label-text">Fecha de nacimiento</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila DNI, país, ciudad -->
+            <div class="triple-input">
+                <div class="input-wrapper">
+                    <select class="input-field">
+                        <option disabled selected>DNI</option>
+                        <option>12345678</option>
+                    </select>
+                    <span class="label-text">DNI</span>
+                </div>
+                <div class="input-wrapper">
+                    <select class="input-field">
+                        <option disabled selected>País</option>
+                        <option>Nicaragua</option>
+                        <option>Honduras</option>
+                    </select>
+                    <span class="label-text">País</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" class="input-field">
+                    <span class="label-text">Ciudad</span>
+                </div>
+            </div>
+
+            <!-- Fila Sexo, Correo, Contraseña -->
+            <div class="triple-input">
+                <div class="input-wrapper">
+                    <select class="input-field">
+                        <option disabled selected>Sexo</option>
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                    </select>
+                    <span class="label-text">Sexo</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="email" class="input-field">
+                    <span class="label-text">Correo Electrónico</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="password" class="input-field">
+                    <span class="label-text">Contraseña</span>
+                </div>
+            </div>
+
+            <!-- Fila Dirección y Celular -->
+            <div class="triple-input">
+                <div class="input-wrapper">
+                    <input type="text" class="input-field">
+                    <span class="label-text">Dirección domiciliar</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" class="input-field">
+                    <span class="label-text">Celular/Teléfono</span>
+                </div>
+            </div>
+
+            <!-- Botón siguiente + flecha alineada debajo de dirección -->
+            <div class="button-container">
+                <a href="login.html" class="back-button">
+                    <img src="imagenes/FLECHA AZUL.PNG" alt="Volver">
+                </a>
+                <a href="registro_laboral.html" class="next-button">Siguiente</a>
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>

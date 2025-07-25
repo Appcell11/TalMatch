@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Registro Empresa</title>
+    <link rel="stylesheet" href="registro_empresa.css" />
+</head>
+<body>
+    <div class="container">
+        <img src="imagenes/talmach.jpg" alt="TalMatch Logo" class="logo"/>
+        <h2>Crear Cuenta/Empresa</h2>
+
+        <form>
+            <div class="row">
+                <!-- Logo de empresa -->
+                <div class="logo-upload">
+                    <label for="logo-file">
+                        <img src="imagenes/adjuntar foto.PNG" alt="Logo de Empresa" class="logo-img"/>
+                    </label>
+                    <input type="file" id="logo-file" class="hidden-file" accept="image/*" />
+                    <label class="label-below">Logo de Empresa</label>
+                </div>
+
+                <!-- Nombre, RUC, Sector -->
+                <div class="input-wrapper">
+                    <input type="text" class="input-field" placeholder="Nombre de empresa" required/>
+                    <label>Nombre de empresa</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <input type="text" class="input-field" placeholder="RUC/Registro fiscal" required/>
+                    <label>RUC/Registro fiscal</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <select class="select-field" required>
+                        <option disabled selected>Selecciona sector</option>
+                        <option>Tecnología</option>
+                        <option>Educación</option>
+                        <option>Salud</option>
+                        <option>Comercio</option>
+                    </select>
+                    <label>Sector/Industria</label>
+                </div>
+            </div>
+
+            <!-- País/Ciudad y Dirección Comercial -->
+            <div class="row">
+                <div class="input-wrapper">
+                    <input type="text" class="input-field" placeholder="País/Ciudad" required/>
+                    <label>País/Ciudad</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" class="input-field" placeholder="Dirección Comercial" required/>
+                    <label>Dirección Comercial</label>
+                </div>
+            </div>
+
+            <!-- URL -->
+            <div class="row">
+                <div class="input-wrapper full-width">
+                    <input type="url" class="input-field" placeholder="URL" required/>
+                    <label>Sitio Web</label>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Siguiente</button>
+            </div>
+        </form>
+
+        <a href="login.html" class="back-button">
+            <img src="imagenes/FLECHA AZUL.PNG" alt="Volver"/>
+        </a>
+    </div>
+</body>
+</html>

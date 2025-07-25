@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Registro Perfil Laboral</title>
+    <link rel="stylesheet" href="registro_laboral.css" />
+</head>
+<body>
+    <div class="container">
+        <img src="imagenes/talmach.jpg" alt="TalMatch Logo" class="logo" />
+        <h2>Crear Cuenta/Perfil Laboral</h2>
+        <form>
+            <div class="row">
+                <div class="input-wrapper">
+                    <select class="select-field" required>
+                        <option value="" disabled selected>Selecciona tu universidad</option>
+                        <option>UNI</option>
+                        <option>UCA</option>
+                        <option>UDEM</option>
+                    </select>
+                    <label>Universidad</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <select class="select-field" required>
+                        <option value="" disabled selected>Selecciona tu carrera</option>
+                        <option>Ingeniería</option>
+                        <option>Administración</option>
+                    </select>
+                    <label>Carrera</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <select class="select-field" required>
+                        <option value="" disabled selected>Selecciona tu estado</option>
+                        <option>Estudiante</option>
+                        <option>Profesional</option>
+                    </select>
+                    <label>Estado</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    <input type="number" class="input-field" placeholder="0" min="0" max="60" required/>
+                    <label>Años de experiencia</label>
+                </div>
+
+                <div class="inline-box">
+                    <strong>Modalidad</strong>
+                    <label><input type="radio" name="modalidad" required> Presencial</label>
+                    <label><input type="radio" name="modalidad"> Remoto</label>
+                    <label><input type="radio" name="modalidad"> Híbrido</label>
+                </div>
+
+                <div class="inline-box">
+                    <strong>Disponibilidad</strong>
+                    <label><input type="radio" name="disponibilidad" required> Tiempo Completo</label>
+                    <label><input type="radio" name="disponibilidad"> Medio Tiempo</label>
+                    <label><input type="radio" name="disponibilidad"> Pasantías</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <textarea class="textarea-field" placeholder="Escribe una descripción..." required></textarea>
+                    <label>Descripción Personal</label>
+                </div>
+            </div>
+
+            <div class="row bottom-align">
+                <div class="input-wrapper small-width">
+                    <select class="select-field" required>
+                        <option value="" disabled selected>Selecciona idioma</option>
+                        <option>Inglés</option>
+                        <option>Español</option>
+                    </select>
+                    <label>Idiomas</label>
+                </div>
+
+                <div class="input-wrapper small-width">
+                    <input type="text" class="input-field" placeholder="Especialidad/Habilidad" required />
+                    <label>Especialidad/Habilidad</label>
+                </div>
+
+                <div class="cv-upload-column">
+                    <div class="cv-upload-row">
+                        <img src="imagenes/ajuntar cv.PNG" alt="Adjuntar CV" class="cv-icon"/>
+                        <label for="cv-file" class="cv-file-label" id="file-name">Seleccionar archivo</label>
+                        <input type="file" id="cv-file" class="hidden-file" required />
+                    </div>
+                    <label class="label-below center">Adjuntar CV</label>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Registrarse</button>
+            </div>
+        </form>
+        <a href="registro_personal.html" class="back-button">
+            <img src="imagenes/FLECHA AZUL.PNG" alt="Volver" />
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('cv-file').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'Seleccionar archivo';
+            document.getElementById('file-name').textContent = fileName;
+        });
+    </script>
+</body>
+</html>

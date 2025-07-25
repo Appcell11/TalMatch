@@ -1,0 +1,74 @@
+<!-- configuracion_admin.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Configuración - Admin</title>
+  <link rel="stylesheet" href="inicio_admin.css">
+  <style>
+    form {
+      max-width: 500px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    input[type="submit"] {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0f5cc0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Configuración del Sistema</h1>
+    <nav>
+      <ul>
+        <li><a href="inicio_admin.html">Volver al Panel</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form>
+      <label for="nombre-sitio">Nombre del sistema</label>
+      <input type="text" id="nombre-sitio" name="nombre-sitio" value="TalMatch">
+
+      <label for="matching">Matching automático</label>
+      <select id="matching" name="matching">
+        <option value="on" selected>Activado</option>
+        <option value="off">Desactivado</option>
+      </select>
+
+      <label for="logo">Cambiar logo (simulado)</label>
+      <input type="text" id="logo" name="logo" placeholder="URL del nuevo logo">
+
+      <input type="submit" value="Guardar cambios">
+    </form>
+  </main>
+</body>
+</html>

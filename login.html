@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalMatch - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+
+        <!-- Imagen izquierda -->
+        <div class="login-image">
+            <img src="imagenes/LOGIN-removebg-preview.png" alt="TalMatch Login">
+        </div>
+
+        <!-- Formulario de Login (carga inicial) -->
+        <div class="login-form" id="login-form">
+            <img src="imagenes/talmach.jpg" alt="Logo TalMatch" class="logo">
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <input type="email" placeholder="Correo electrónico o usuario" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <p>¿No tienes una cuenta? <a href="#" id="link-to-register">Regístrate</a></p>
+        </div>
+
+        <!-- Selección de tipo de registro -->
+        <div class="register-selection hidden" id="register-selection">
+            <img src="imagenes/talmach.jpg" alt="Logo TalMatch" class="logo">
+            <h2>¿Qué eres?</h2>
+            <div class="selection-cards">
+                <div class="card" id="student-card">
+                    <img src="imagenes/estudiante.jpg" alt="Estudiante">
+                    <p>Estudiante / Profesional</p>
+                </div>
+                <div class="card" id="company-card">
+                    <img src="imagenes/empresa.jpg" alt="Empresa">
+                    <p>Empresa</p>
+                </div>
+            </div>
+            <button id="continue-btn" disabled>Continuar</button>
+            <a href="#" id="back-to-login1">Volver al Login</a>
+        </div>
+
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const registerSelection = document.getElementById('register-selection');
+        const linkToRegister = document.getElementById('link-to-register');
+        const backToLogin1 = document.getElementById('back-to-login1');
+
+        const studentCard = document.getElementById('student-card');
+        const companyCard = document.getElementById('company-card');
+        const continueBtn = document.getElementById('continue-btn');
+
+        let selected = '';
+
+        // Ir a selección de tipo de registro
+        linkToRegister.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.classList.add('hidden');
+            registerSelection.classList.remove('hidden');
+        });
+
+        // Volver al login desde selección
+        backToLogin1.addEventListener('click', (e) => {
+            e.preventDefault();
+            registerSelection.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+            studentCard.classList.remove('selected');
+            companyCard.classList.remove('selected');
+            continueBtn.disabled = true;
+        });
+
+        // Selección de tarjeta estudiante/empresa
+        studentCard.addEventListener('click', () => {
+            studentCard.classList.add('selected');
+            companyCard.classList.remove('selected');
+            continueBtn.disabled = false;
+            selected = 'student';
+        });
+
+        companyCard.addEventListener('click', () => {
+            companyCard.classList.add('selected');
+            studentCard.classList.remove('selected');
+            continueBtn.disabled = false;
+            selected = 'company';
+        });
+
+        // Redirigir a las páginas correspondientes
+        continueBtn.addEventListener('click', () => {
+            if (selected === 'student') {
+                window.location.href = 'registro_personal.html';
+            } else if (selected === 'company') {
+                window.location.href = 'registro_empresa.html';
+            }
+        });
+    </script>
+</body>
+</html>

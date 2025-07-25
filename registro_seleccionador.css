@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f2f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border: 3px solid #00aaff;
+    border-radius: 12px;
+    padding: 30px;
+    width: 95%;
+    max-width: 900px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.input-wrapper {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper label {
+    font-size: 13px;
+    color: #333;
+    margin-top: 4px;
+    text-align: left;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #00aaff;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.button-container button {
+    padding: 12px 24px;
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #0088cc;
+}
+
+.back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.back-button img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}

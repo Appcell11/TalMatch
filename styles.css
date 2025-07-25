@@ -1,0 +1,161 @@
+* {
+    font-family: sans-serif;
+}
+
+/* Reset de márgenes y configuración base del body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e7e7e7; /* Fondo blanco */
+    color: #000000; /* Texto negro por defecto */
+}
+
+/* Encabezado del sitio */
+header {
+    background-color: #007BFF; /* Azul TalMatch */
+    color: #FFFFFF; /* Texto blanco en encabezado */
+    text-align: left;
+    margin: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0,0.4);
+    padding: 1em;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    top: 0;
+
+    h1 {
+        color: #FFFFFF; /* Texto blanco en encabezado */
+        font-size: 3em;
+        margin: 0;
+    };
+
+    .logo {
+        background-image: url("/imagenes/logo_light.png");
+        width: 8em;
+        height: 3em;
+        background-size: contain;
+        background-repeat: no-repeat;
+    };
+}
+
+/* Contenedor principal */
+.container {
+    height: 70dvh;
+    padding: 4em;
+    margin: 2em;
+    background-color: #FFFFFF; /* Fondo blanco para contraste */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+    .main-img {
+            width: 50%;
+            background-image: url("/imagenes/talmatchMain.jpeg");
+            aspect-ratio: 1;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top;
+    }
+
+    .main-p {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        height: 100vmax;
+        padding: 0.3em;
+        margin: 0.5em;
+        background-color: #FFFFFF; /* Fondo blanco para contraste */
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0em;
+
+            .main-img {
+                display: none;
+                width: 0%;
+                aspect-ratio: 1;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: top;
+            }
+
+            .main-p {
+                width: 100%;
+            }
+        }
+}
+.container-blue {
+    background: #0057b4;
+    color: white;
+
+    ul {
+        text-align: left;
+        text-decoration: none;
+        list-style: none;
+        line-height: 2;
+    }
+
+    h2 {
+        color: white;
+        font-size: 2.5em;
+    }
+
+    p {
+        color: white;
+    }
+}
+
+/* Títulos */
+h2 {
+    color: #007BFF; /* Azul TalMatch */
+    font-size: 2em;
+}
+
+/* Párrafos */
+p {
+    font-size: 18px;
+    color: #333333; /* Gris oscuro para mejor lectura */
+    border-left: 1px solid gray;
+}
+
+/* Botones de acción */
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons a {
+    text-decoration: none;
+    background-color: #007BFF; /* Azul TalMatch */
+    color: #FFFFFF; /* Texto blanco en botones */
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.buttons a:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #F0F0F0; /* Gris claro de fondo */
+    color: #000000; /* Texto negro */
+    height: 10em;
+}
