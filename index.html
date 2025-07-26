@@ -6,6 +6,7 @@
     <title>TalMatch - Conectando talento con oportunidades</title>
     <!-- Enlace a estilos externos -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <!-- Encabezado del sitio -->
@@ -15,7 +16,7 @@
     </header>
 
     <!-- Contenedor principal -->
-    <section class="container">
+    <section class="container right animate__animated animate__delay-0.5s">
         <div class="main-img" style="background-image: url('/imagenes/talmatchMain.jpeg');">
         </div>
         <div class="main-p">
@@ -28,12 +29,12 @@
         </div>
     </section>
     <section>
-        <div class="container container-blue">
+        <div class="container left container-blue animate__animated animate__delay-0.5s">
             <h2 class="main-p"><b>¿Por qué elegir TalMatch?</b><br/></h2>
-            <div class="main-img" style="background-image: url('/imagenes/logo_light.png');">
+            <div class="main-img" style="background-image: url('/imagenes/init_user.png');">
             </div>
         </div>
-        <div class="container">
+        <div class="container right animate__animated animate__delay-0.5s">
             <p style="border: none;">
                 <b>Acceso directo a candidatos calificados:</b>
             <br/>Encuentra fácilmente al candidato ideal entre una amplia variedad de perfiles que se actualizan constantemente.
@@ -45,7 +46,7 @@
             <br/>Tanto empresas como profesionales pueden crecer juntos, compartiendo objetivos y proyectos alineados.
             </p>
         </div>
-        <div class="container">
+        <div class="container left animate__animated animate__delay-0.5s">
             <h2><b>¿Eres empresa?</b><br/></h2>
             <p style="text-align: left;">
                Descubre el talento que transformará tu empresa. 
@@ -55,7 +56,7 @@
     </section>
     <section class="container container-blue">
         <div class="main-p">
-            <h2>
+            <h2 class="animate__animated animate__bounce animate__repeat-3 animate__slowed animate__delay-3s">
                 <b>Atrévete a conectar.
                 <br/> Atrévete a crecer. 
                 <br/>Únete a la comunidad de TalMatch hoy
@@ -69,4 +70,33 @@
         Proyecto Universitario - Ingeniería en Sistemas 2025
     </footer>
 </body>
+<script>
+    const observer_right = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate__bounceInRight');            
+        } else {
+            /*entry.target.classList.remove('animate__bounceInRight');*/
+        }
+    });
+    });
+
+    document.querySelectorAll('.right').forEach(el => {
+    observer_right.observe(el);
+    });
+
+    const observer_left = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate__bounceInLeft');            
+        } else {
+            /*entry.target.classList.remove('animate__bounceInLeft');*/
+        }
+    });
+    });
+
+    document.querySelectorAll('.left').forEach(el => {
+    observer_left.observe(el);
+    });
+</script>
 </html>

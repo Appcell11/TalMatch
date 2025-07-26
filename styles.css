@@ -23,6 +23,7 @@ header {
     display: flex;
     align-items: center;
     top: 0;
+    z-index: 2;
 
     h1 {
         color: #FFFFFF; /* Texto blanco en encabezado */
