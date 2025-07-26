@@ -32,7 +32,7 @@ header {
     };
 
     .logo {
-        background-image: url("/imagenes/logo_light.png");
+        background-image: url("imagenes/logo_light.png");
         width: 8em;
         height: 3em;
         background-size: contain;
@@ -57,11 +57,11 @@ header {
 
     .main-img {
             width: 50%;
-            background-image: url("/imagenes/talmatchMain.jpeg");
+            background-image: url("imagenes/talmatchMain.jpeg");
             aspect-ratio: 1;
             background-size: contain;
             background-repeat: no-repeat;
-            background-position: top;
+            background-position: 'center';
     }
 
     .main-p {
