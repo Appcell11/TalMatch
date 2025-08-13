@@ -93,44 +93,60 @@
 
             <!-- Perfiles -->
              <div id="perfiles" class="box-v">
-                 <div class="profile-card">
-                     <span class="user material-symbols-outlined">account_circle</span>
-                     <div>
-                        <div>
-                            <strong style="font-size: larger;">Cecilia Méndez</strong>
-                            <span>Estudiante</span>
-                            <span>Años de experiencia</span>
-                        </div>
-                        <div style="display: flex; flex-direction: row; gap: 1em; align-items:end;">
-                            <span id="time">Hace 10 m</span>
-                            <a id="view-profile" href="../inicio_usuario/vpusuario.html">Ver perfil →</a>
-                        </div>
-                     </div>
-                 </div>
+                <!--aqui se van a insertar los card de los perfiles con javascript-->
              </div>
         </section>
     </main>
 </body>
 <script>
     const perfiles = document.getElementById("perfiles");
-    const perfilCard = `<div class="profile-card">
-                     <span class="user material-symbols-outlined">account_circle</span>
-                     <div>
-                        <div>
-                            <strong style="font-size: larger;">Cecilia Méndez</strong>
-                            <span>Estudiante</span>
-                            <span>Años de experiencia</span>
-                        </div>
-                        <div style="display: flex; flex-direction: row; gap: 1em; align-items:end;">
-                            <span id="time">Hace 10 m</span>
-                            <a id="view-profile" href="../inicio_usuario/vpusuario.html">Ver perfil →</a>
-                        </div>
-                     </div>
-                 </div>`;
-    let i = 0;
-    while(i < 25){
-        perfiles.innerHTML += perfilCard;
-        i++;
+
+    let usuario = {
+        url_perfil: null,
+        nombre: null,
+        estado: null,
+        experiencia: null,
+        fecha_creacion: null
     }
+
+    const cargar = async () => {
+        try {
+            const response = await fetch("./usuarios.json");
+            const data = await response.json();
+            data.map(index => {
+                usuario.url_perfil = index.url_perfil;
+                usuario.nombre = index.nombre;
+                usuario.estado = index.estado;
+                usuario.experiencia = index.experiencia;
+                usuario.fecha_creacion = index.fecha_creacion;
+                console.log(index);
+                CargarPerfil(usuario);
+            });
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
+
+    const CargarPerfil = (Usuario) => {
+        const perfilCard =
+        `<div class="profile-card">
+            <span class="user material-symbols-outlined" Style="background-image: url('${Usuario.url_perfil}')";></span>
+            <div>
+                <div>
+                    <strong style="font-size: larger;">${Usuario.nombre}</strong>
+                    <span>${Usuario.estado}</span>
+                    <span>${Usuario.experiencia}</span>
+                </div>
+                <div style="display: flex; flex-direction: row; gap: 1em; align-items:end;">
+                    <span id="time">${Usuario.fecha_creacion}</span>
+                    <a id="view-profile" href="../inicio_usuario/vpusuario.html">Ver perfil →</a>
+                </div>
+            </div>
+         </div>`;
+        perfiles.innerHTML += perfilCard;
+    }
+
+    cargar();
 </script>
 </html>
