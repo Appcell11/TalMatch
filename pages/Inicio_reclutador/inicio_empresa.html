@@ -14,18 +14,25 @@
 </head>
 <body>
     <header class="header">
-        <!--<div class="logo">
-            <img src="imagenes\menu.png" alt="TalMatch Logo">
+        <span id="menu_icon" style="width: 2em; height: 2em; background-image: url('../../imagenes/menu2.png'); background-position: center; background-size: cover;">
+        </span>
+        <img height="25rem" src="../../imagenes/talmach2.png" alt="logo_talmatch"/>
+        <div id="admin-icon" style="display: flex; flex-direction: row; align-items: center; gap: 1em;">
+            <div class="admin_inf">
+                <span style="color: #555;">Administrador</span>
+                <span class="user material-symbols-outlined" style="width: 2em; height: 2em; background-image: url('https://randomuser.me/api/portraits/men/58.jpg');"></span>
+            </div>
+
+            <button class="button">
+                <span>| Salir</span>
+            </button>
         </div>
-        <div class="menu-icon">
-            <img src="imagenes\menu.png" alt="Menú">
-        </div>-->
     </header>
 
     <main class="main-content open-sans-text">
-        <!-- Filtro lateral -->
-        <aside class="sidebar">
+        <aside id="asidebar" class="sidebar aside_close">
             <div class="filter-box">
+                <h3>Filtros de búsqueda <br></h3>
                 <label><strong>Buscar por universidad</strong></label>
                 <select>
                     <option>UNAN</option>
@@ -45,8 +52,8 @@
                     <label><input type="radio" name="tipo"> Estudiante</label>
                 </div>
 
-                <label><strong>Años de experiencia</strong></label>
-                <input type="range" min="0" max="10" />
+                <label id="label_exp"><strong>Años de experiencia: 0</strong></label>
+                <input id="inputSlider" type="range" min="0" max="10" value="0"/>
 
                 <div class="filters-columns">
                     <div class="filter-column">
@@ -67,6 +74,8 @@
                 <label><strong>Idioma</strong></label>
                 <select>
                     <option>Español</option>
+                    <option>Inglés</option>
+                    <option>Frances</option>
                 </select>
 
                 <label><strong>Sexo</strong></label>
@@ -74,63 +83,79 @@
                     <option>Masculino</option>
                     <option>Femenino</option>
                 </select>
-                <button class="filter-btn">Filtrar</button>
+                <button id="filtrar" class="filter-btn">Filtrar</button>
             </div>
         </aside>
-
+        <!-- FIN - Filtro lateral -->
 
         <!-- Contenido principal -->
-        <section class="content">
-            <div class="box-h">
-                <h2 id="inicio">Home</h2>
-                <div class="search-box">
-                    <input type="text" placeholder="Buscar talento..." />
-                    <button class="search-btn">
-                        <span class="material-symbols-outlined">search</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Perfiles -->
-             <div id="perfiles" class="box-v">
-                 <div class="profile-card">
-                     <span class="user material-symbols-outlined">account_circle</span>
-                     <div>
-                        <div>
-                            <strong style="font-size: larger;">Cecilia Méndez</strong>
-                            <span>Estudiante</span>
-                            <span>Años de experiencia</span>
-                        </div>
-                        <div style="display: flex; flex-direction: row; gap: 1em; align-items:end;">
-                            <span id="time">Hace 10 m</span>
-                            <a id="view-profile" href="../inicio_usuario/vpusuario.html">Ver perfil →</a>
-                        </div>
-                     </div>
-                 </div>
-             </div>
+        <section id="perfiles" class="content">
         </section>
     </main>
 </body>
 <script>
     const perfiles = document.getElementById("perfiles");
-    const perfilCard = `<div class="profile-card">
-                     <span class="user material-symbols-outlined">account_circle</span>
-                     <div>
-                        <div>
-                            <strong style="font-size: larger;">Cecilia Méndez</strong>
-                            <span>Estudiante</span>
-                            <span>Años de experiencia</span>
-                        </div>
-                        <div style="display: flex; flex-direction: row; gap: 1em; align-items:end;">
-                            <span id="time">Hace 10 m</span>
-                            <a id="view-profile" href="../inicio_usuario/vpusuario.html">Ver perfil →</a>
-                        </div>
-                     </div>
-                 </div>`;
-    let i = 0;
-    while(i < 25){
-        perfiles.innerHTML += perfilCard;
-        i++;
+    const label_exp = document.getElementById("label_exp");
+    const inputSlider = document.getElementById("inputSlider");
+    const menu_icon = document.getElementById("menu_icon");
+    const asidebar = document.getElementById("asidebar");
+    const filtrar = document.getElementById("filtrar");
+
+    const cambiar_exp = (e) => label_exp.innerText = "Años de experiencia: < " + e;
+
+    filtrar.addEventListener("click", () => {
+        asidebar.classList.toggle("aside_close");
+    });
+
+    inputSlider.addEventListener("input", (e) => {
+        cambiar_exp(e.target.value);
+    });
+
+    menu_icon.addEventListener("click", () => {
+        asidebar.classList.toggle("aside_close");
+    })
+
+    let usuario = {
+        url_perfil: null,
+        nombre: null,
+        estado: null,
+        experiencia: null,
+        fecha_creacion: null
     }
+
+    const cargar = async () => {
+        try {
+            const response = await fetch("./usuarios.json");
+            const data = await response.json();
+            data.map(index => {
+                usuario.url_perfil = index.url_perfil;
+                usuario.nombre = index.nombre;
+                usuario.estado = index.estado;
+                usuario.experiencia = index.experiencia;
+                usuario.fecha_creacion = index.fecha_creacion;                
+                CargarPerfil(usuario);
+            });
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
+
+    const CargarPerfil = (Usuario) => {
+        const perfilCard =
+        `<div class="profile-card">
+            <span class="user material-symbols-outlined" Style="background-image: url('${Usuario.url_perfil}')";></span>
+            <div>
+                <strong style="font-size: larger;">${Usuario.nombre}</strong>
+                <span>${Usuario.estado}</span>
+                <span>${Usuario.experiencia}</span>
+                <span id="time">${Usuario.fecha_creacion}</span>
+                <a id="view-profile" href="../inicio_usuario/vpusuario.html">Ver perfil →</a>
+            </div>
+         </div>`;
+        perfiles.innerHTML += perfilCard;
+    }
+
+    cargar();
 </script>
 </html>

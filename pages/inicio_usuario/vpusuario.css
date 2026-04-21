@@ -1,50 +1,109 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f6fc;
-  margin: 0;
-  padding: 0;
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    display: flex;
+  }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: white;
-  border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1em 1.5em;
+    background-color: #ffffff;
+    border-bottom: #818181;
+    z-index: 2;
 }
 
-.logo {
-  height: 100px;
+.button {
+    height: 2rem;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    color: #888;
 }
 
-.menu-icon {
-  font-size: 24px;
-  cursor: pointer;
+.button:hover {
+    color: red;
+    text-shadow: rgb(255, 145, 145) 0px 0px 1px;
+}
+
+#menu_icon {
+  display: none;
+}
+
+.admin_inf {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.user {
+    width: 4em;
+    height: 4em;
+    background-size: cover;
+    background-color: #00aaff;
+    background-position: center;
+    border-radius: 100%;
+    aspect-ratio: 4;
 }
 
 .container {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 20px;
+  margin: 0;
+  padding: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  background-color: #eee;
+  gap: 2em;
+  height: 82dvh;
+}
+
+.perfil {
   background-color: white;
-  border-radius: 15px;
-  border: 2px solid #3399ff;
+  border: none;
+  border-radius: 20px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 70dvw;
+  flex-wrap: wrap;
 }
 
 .perfil-box {
   display: flex;
-  gap: 20px;
+  flex-direction: row;
   align-items: flex-start;
-  margin-bottom: 20px;
+  gap: 2em;
 }
 
 .foto-perfil {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
   object-fit: cover;
-  border: 2px solid #3399ff;
+  border: none;
+  aspect-ratio: 4;
 }
 
 .info p {
@@ -61,21 +120,35 @@ body {
 }
 
 .mensaje {
-  margin-top: 30px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+  align-content: center;
+  gap: 0.5em;
 }
 
 .mensaje textarea {
+  height: 1em;
   width: 100%;
-  height: 100px;
-  padding: 10px;
+  padding: 12px 5px;
   border: 2px solid #3399ff;
   border-radius: 10px;
-  resize: vertical;
-  font-size: 14px;
+  resize: none;
+  scrollbar-width: none;
 }
 
 .mensaje button {
-  margin-top: 10px;
   padding: 10px 20px;
   background-color: #0099ff;
   color: white;
@@ -88,4 +161,62 @@ body {
 
 .mensaje button:hover {
   background-color: #007acc;
+}
+
+@media (max-width: 767px) {
+  
+  .container {
+    padding: 1em;
+  }
+
+    .admin_inf {        
+        display: none;
+    }
+
+    #menu_icon {
+        display: block;
+    }
+
+    #menu_icon:hover {
+        cursor: pointer;
+    }
+
+    .filter-box {
+        z-index: 2;
+        width: 90vw;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .aside_close {
+        transition: all 0.3s ease-in-out;
+        transform: translateX(-110vw);
+    }
+
+    .perfil {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .perfil-box {
+      flex-wrap: wrap;
+    }
+
+    .mensaje {
+        width: 100vw;
+        height: 80dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main-content {
+        gap: 0;
+    }
+
+    .content {
+        width: 100dvw;
+    }
 }

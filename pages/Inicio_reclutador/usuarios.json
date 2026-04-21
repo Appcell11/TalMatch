@@ -1,0 +1,135 @@
+[
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/women/1.jpg",
+    "nombre": "Cecilia Mendez",
+    "estado": "Estudiante",
+    "experiencia": "0 años de experiencia",
+    "fecha_creacion": "2025-08-01"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/2.jpg",
+    "nombre": "Juan Pérez",
+    "estado": "Profesional",
+    "experiencia": "3 años de experiencia",
+    "fecha_creacion": "2024-12-15"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/women/3.jpg",
+    "nombre": "María López",
+    "estado": "Estudiante",
+    "experiencia": "1 año de experiencia",
+    "fecha_creacion": "2025-01-20"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/4.jpg",
+    "nombre": "Ana Gómez",
+    "estado": "Profesional",
+    "experiencia": "5 años de experiencia",
+    "fecha_creacion": "2023-05-30"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/5.jpg",
+    "nombre": "Carlos Ruiz",
+    "estado": "Estudiante",
+    "experiencia": "0 años de experiencia",
+    "fecha_creacion": "2025-06-10"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/women/6.jpg",
+    "nombre": "Lucía Fernández",
+    "estado": "Profesional",
+    "experiencia": "2 años de experiencia",
+    "fecha_creacion": "2024-10-13"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/7.jpg",
+    "nombre": "Miguel Torres",
+    "estado": "Estudiante",
+    "experiencia": "1 año de experiencia",
+    "fecha_creacion": "2025-04-05"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/women/8.jpg",
+    "nombre": "Elena Sánchez",
+    "estado": "Profesional",
+    "experiencia": "4 años de experiencia",
+    "fecha_creacion": "2023-07-22"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/9.jpg",
+    "nombre": "Jorge Ramírez",
+    "estado": "Estudiante",
+    "experiencia": "0 años de experiencia",
+    "fecha_creacion": "2025-02-28"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/women/10.jpg",
+    "nombre": "Paula Martínez",
+    "estado": "Profesional",
+    "experiencia": "6 años de experiencia",
+    "fecha_creacion": "2022-08-16"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/11.jpg",
+    "nombre": "Diego Vargas",
+    "estado": "Estudiante",
+    "experiencia": "0 años de experiencia",
+    "fecha_creacion": "2025-03-12"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/women/12.jpg",
+    "nombre": "Sofía Herrera",
+    "estado": "Profesional",
+    "experiencia": "7 años de experiencia",
+    "fecha_creacion": "2021-11-09"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/13.jpg",
+    "nombre": "Roberto Castillo",
+    "estado": "Estudiante",
+    "experiencia": "0 años de experiencia",
+    "fecha_creacion": "2025-05-07"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/women/14.jpg",
+    "nombre": "Isabel Muñoz",
+    "estado": "Profesional",
+    "experiencia": "3 años de experiencia",
+    "fecha_creacion": "2024-09-19"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/15.jpg",
+    "nombre": "Javier Molina",
+    "estado": "Estudiante",
+    "experiencia": "1 año de experiencia",
+    "fecha_creacion": "2025-01-05"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/women/16.jpg",
+    "nombre": "Marta Ríos",
+    "estado": "Profesional",
+    "experiencia": "8 años de experiencia",
+    "fecha_creacion": "2020-06-11"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/17.jpg",
+    "nombre": "Esteban Gómez",
+    "estado": "Estudiante",
+    "experiencia": "0 años de experiencia",
+    "fecha_creacion": "2025-07-23"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/women/18.jpg",
+    "nombre": "Verónica Díaz",
+    "estado": "Profesional",
+    "experiencia": "2 años de experiencia",
+    "fecha_creacion": "2024-11-27"
+  },
+  {
+    "url_perfil": "https://randomuser.me/api/portraits/men/19.jpg",
+    "nombre": "Andrés León",
+    "estado": "Estudiante",
+    "experiencia": "0 años de experiencia",
+    "fecha_creacion": "2025-08-02"
+  }
+]
