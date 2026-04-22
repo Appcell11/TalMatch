@@ -19,8 +19,8 @@
             <img src="../../imagenes/talmach.jpg" alt="Logo TalMatch" class="logo">
             <h2>Iniciar Sesión</h2>
             <form id="formlogin">
-                <input type="email" placeholder="Correo electrónico o usuario" required>
-                <input type="password" placeholder="Contraseña" required>
+                <input id="usuario" type="text" placeholder="Nombre de usuario" required>
+                <input id="contrasena" type="password" placeholder="Contraseña" required>
                 <button type="submit">Iniciar Sesión</button>
             </form>
             <p>¿No tienes una cuenta? <a href="#" id="link-to-register">Regístrate</a></p>
@@ -52,14 +52,17 @@
         const registerSelection = document.getElementById('register-selection');
         const linkToRegister = document.getElementById('link-to-register');
         const backToLogin1 = document.getElementById('back-to-login1');
+        const input_usuario = document.getElementById("usuario");
+        const input_contrasena = document.getElementById("contrasena");
 
         const studentCard = document.getElementById('student-card');
         const companyCard = document.getElementById('company-card');
         const continueBtn = document.getElementById('continue-btn');
+        
 
         let selected = '';
 
-        formlogin.addEventListener('submit', (e) => {e.preventDefault(); window.location.href = '../inicio_reclutador/inicio_empresa.html'});
+        formlogin.addEventListener('submit', (e) => {e.preventDefault(); IniciarSesion()});
 
         // Ir a selección de tipo de registro
         linkToRegister.addEventListener('click', (e) => {
@@ -101,6 +104,32 @@
                 window.location.href = '../registros/registro_empresa.html';
             }
         });
+        /////////////////////////////////////////////////////////////
+        const IniciarSesion = async () => {
+            let sesion = false;
+            let usuario = {
+                nombre_usuario: input_usuario.value,
+                contrasena: input_contrasena.value
+            }
+            console.log(usuario.nombre_usuario);
+            console.log(usuario.contrasena);
+
+            try {
+                const response = await fetch("./Datos.json");
+                const data = await response.json();
+                data.map(index => {
+                    if(index.nombre_usuario == usuario.nombre_usuario && index.contrasena == usuario.contrasena && sesion == false){
+                        localStorage.setItem("usuario", usuario.nombre_usuario);
+                        sesion = true;
+                        window.location.href = '../Inicio_reclutador/inicio_empresa.html';
+                    }
+                });
+                if(sesion == false) alert("Credenciales incorrectas");
+            }
+            catch (error) {
+                console.error(error);
+            }
+        }
     </script>
 </body>
 </html>
