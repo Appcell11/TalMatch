@@ -120,8 +120,10 @@
                 data.map(index => {
                     if(index.nombre_usuario == usuario.nombre_usuario && index.contrasena == usuario.contrasena && sesion == false){
                         localStorage.setItem("usuario", usuario.nombre_usuario);
+                        localStorage.setItem("url_perfil", index.url_perfil);
                         sesion = true;
-                        window.location.href = '../Inicio_reclutador/inicio_empresa.html';
+                        if(index.rol == "reclutador") window.location.href = '../Inicio_reclutador/inicio_empresa.html';
+                        else window.location.href = "../inicio_usuario/inicio_usuario.html";
                     }
                 });
                 if(sesion == false) alert("Credenciales incorrectas");

@@ -1,73 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TalMatch - Inicio Usuario</title>
-  <link rel="stylesheet" href="inicio_usuario.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TalMatch - Inicio Empresa</title>
+    <link rel="stylesheet" href="inicio_usuario.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_circle" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_circle" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="../../imagenes/talmach.jpg" alt="TalMatch Logo">
-      
-    </div>
-    <div class="menu">
-      <button class="menu-icon">&#9776;</button>
-    </div>
-  </header>
+    <header class="header">
+        <span id="menu_icon" style="width: 2em; height: 2em; background-image: url('../../imagenes/menu2.png'); background-position: center; background-size: cover;">
+        </span>
+        <img height="25rem" src="../../imagenes/talmach2.png" alt="logo_talmatch"/>
+        <div id="admin-icon" style="display: flex; flex-direction: row; align-items: center; gap: 1em;">
+            <div class="admin_inf">
+                <span id="nombre_perfil" style="color: #555;">Administrador</span>
+                <span id="perfil" class="user material-symbols-outlined" style="width: 2em; height: 2em;"></span>
+            </div>
 
-  <main>
-    <section class="sidebar">
-      <h3>Buscar Empresas</h3>
-      <label for="filtroSector">Sector</label>
-      <select id="filtroSector">
-        <option>Tecnología</option>
-        <option>Finanzas</option>
-        <option>Salud</option>
-      </select>
-
-      <label for="filtroUbicacion">Ubicación</label>
-      <select id="filtroUbicacion">
-        <option>Managua</option>
-        <option>Granada</option>
-        <option>León</option>
-      </select>
-
-      <label for="modalidad">Modalidad</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox"> Presencial</label>
-        <label><input type="checkbox"> Remoto</label>
-        <label><input type="checkbox"> Híbrido</label>
-      </div>
-
-      <label for="disponibilidad">Disponibilidad</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox"> Tiempo Completo</label>
-        <label><input type="checkbox"> Medio Tiempo</label>
-        <label><input type="checkbox"> Pasantías</label>
-      </div>
-
-      <button class="btn-filtrar">Filtrar</button>
-    </section>
-
-    <section class="contenido">
-      <h2>Oportunidades para ti</h2>
-      <div class="card-oferta">
-        <div class="detalle-empresa">
-          <img src="../../imagenes/EMPRESA.jpg" alt="Empresa Logo">
-          <div>
-            <h3>Tech Innovators</h3>
-            <p>Vacante: Desarrollador Web</p>
-            <p>Ubicación: Remoto</p>
-          </div>
+            <button class="button" onclick="salir();">
+                <span>| Salir</span>
+            </button>
         </div>
-        <div class="acciones">
-          <span>Publicado hace 5h</span>
-          <a href="#">Ver más →</a>
-        </div>
-      </div>
-    </section>
-  </main>
+    </header>
+
+    <main class="main-content open-sans-text">
+        <aside id="asidebar" class="sidebar aside_close">
+            <div class="filter-box">
+                <h3>Filtros de búsqueda <br></h3>
+                <label><strong>Buscar por universidad</strong></label>
+                <select>
+                    <option>UNAN</option>
+                    <option>UNI</option>
+                    <option>UDEM</option>
+                </select>
+
+                <label><strong>Buscar por carrera</strong></label>
+                <select>
+                    <option>Ingeniería en Sistemas</option>
+                    <option>MEDICINA</option>
+                    <option>DERECHO</option>
+                </select>
+
+                <div class="type-radio">
+                    <label><input type="radio" name="tipo" checked> Profesional</label>
+                    <label><input type="radio" name="tipo"> Estudiante</label>
+                </div>
+
+                <label id="label_exp"><strong>Años de experiencia: 0</strong></label>
+                <input id="inputSlider" type="range" min="0" max="10" value="0"/>
+
+                <div class="filters-columns">
+                    <div class="filter-column">
+                        <label><strong>Modalidad</strong></label>
+                        <label><input name="modalidad" type="radio" checked> Presencial</label>
+                        <label><input name="modalidad" type="radio"> Remoto</label>
+                        <label><input name="modalidad" type="radio"> Híbrido</label>
+                    </div>
+
+                    <div class="filter-column">
+                        <label><strong>Disponibilidad</strong></label>
+                        <label><input name="disponibilidad" type="radio"> Tiempo Completo</label>
+                        <label><input name="disponibilidad" type="radio"> Medio tiempo</label>
+                        <label><input name="disponibilidad" type="radio"> Pasantías</label>
+                    </div>
+                </div>
+
+                <label><strong>Idioma</strong></label>
+                <select>
+                    <option>Español</option>
+                    <option>Inglés</option>
+                    <option>Frances</option>
+                </select>
+
+                <label><strong>Sexo</strong></label>
+                <select>
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                </select>
+                <button id="filtrar" class="filter-btn">Filtrar</button>
+            </div>
+        </aside>
+        <!-- FIN - Filtro lateral -->
+
+        <!-- Contenido principal -->
+        <section id="perfiles" class="content">
+        </section>
+    </main>
 </body>
+<script>
+    const perfiles = document.getElementById("perfiles");
+    const label_exp = document.getElementById("label_exp");
+    const inputSlider = document.getElementById("inputSlider");
+    const menu_icon = document.getElementById("menu_icon");
+    const asidebar = document.getElementById("asidebar");
+    const filtrar = document.getElementById("filtrar");
+    const perfil = document.getElementById("perfil");
+    const nombre_perfil = document.getElementById("nombre_perfil");
+
+    perfil.style.backgroundImage = `url(${localStorage.getItem("url_perfil")})`;
+    nombre_perfil.innerText = localStorage.getItem("usuario");
+
+    const cambiar_exp = (e) => label_exp.innerText = "Años de experiencia: < " + e;
+
+    filtrar.addEventListener("click", () => {
+        asidebar.classList.toggle("aside_close");
+    });
+
+    inputSlider.addEventListener("input", (e) => {
+        cambiar_exp(e.target.value);
+    });
+
+    menu_icon.addEventListener("click", () => {
+        asidebar.classList.toggle("aside_close");
+    })
+
+    let usuario = {
+        url_perfil: null,
+        nombre: null,
+        estado: null,
+        experiencia: null,
+        fecha_creacion: null
+    }
+
+    const cargar = async () => {
+        try {
+            const response = await fetch("../../Data/usuarios.json");
+            const data = await response.json();
+            data.map(index => {
+                usuario.url_perfil = index.url_perfil;
+                usuario.nombre = index.nombre;
+                usuario.estado = index.estado;
+                usuario.experiencia = index.experiencia;
+                usuario.fecha_creacion = index.fecha_creacion;                
+                CargarPerfil(usuario);
+            });
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
+
+    const CargarPerfil = (Usuario) => {
+        const perfilCard =
+        `<div class="profile-card">
+            <span class="user material-symbols-outlined" Style="background-image: url('${Usuario.url_perfil}')";></span>
+            <div>
+                <strong style="font-size: larger;">${Usuario.nombre}</strong>
+                <span>${Usuario.estado}</span>
+                <span>${Usuario.experiencia}</span>
+                <span id="time">${Usuario.fecha_creacion}</span>
+                <a id="view-profile" href="../inicio_usuario/vpusuario.html">Ver perfil →</a>
+            </div>
+         </div>`;
+        perfiles.innerHTML += perfilCard;
+    }
+
+    const salir = () => {
+        localStorage.clear();
+        window.location.href = "../login/login.html";
+    }
+
+    cargar();
+</script>
 </html>

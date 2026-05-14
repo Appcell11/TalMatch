@@ -19,11 +19,10 @@
         <img height="25rem" src="../../imagenes/talmach2.png" alt="logo_talmatch"/>
         <div id="admin-icon" style="display: flex; flex-direction: row; align-items: center; gap: 1em;">
             <div class="admin_inf">
-                <span style="color: #555;">Administrador</span>
-                <span class="user material-symbols-outlined" style="width: 2em; height: 2em; background-image: url('https://randomuser.me/api/portraits/men/58.jpg');"></span>
+                <span id="nombre_perfil" style="color: #555;">Administrador</span>
+                <span id="perfil" class="user material-symbols-outlined" style="width: 2em; height: 2em;"></span>
             </div>
-
-            <button class="button">
+            <button class="button" onclick="salir();">
                 <span>| Salir</span>
             </button>
         </div>
@@ -100,6 +99,11 @@
     const menu_icon = document.getElementById("menu_icon");
     const asidebar = document.getElementById("asidebar");
     const filtrar = document.getElementById("filtrar");
+    const perfil = document.getElementById("perfil");
+    const nombre_perfil = document.getElementById("nombre_perfil");
+
+    perfil.style.backgroundImage = `url(${localStorage.getItem("url_perfil")})`;
+    nombre_perfil.innerText = localStorage.getItem("usuario");
 
     const cambiar_exp = (e) => label_exp.innerText = "Años de experiencia: < " + e;
 
@@ -125,7 +129,7 @@
 
     const cargar = async () => {
         try {
-            const response = await fetch("./usuarios.json");
+            const response = await fetch("../../Data/usuarios.json");
             const data = await response.json();
             data.map(index => {
                 usuario.url_perfil = index.url_perfil;
@@ -154,6 +158,11 @@
             </div>
          </div>`;
         perfiles.innerHTML += perfilCard;
+    }
+
+    const salir = () => {
+        localStorage.clear();
+        window.location.href = "../login/login.html";
     }
 
     cargar();

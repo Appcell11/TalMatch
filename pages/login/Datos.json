@@ -1,10 +1,14 @@
 [
     {
+        "url_perfil": "https://randomuser.me/api/portraits/men/90.jpg",
         "nombre_usuario": "Appcell",
-        "contrasena": "axelguevar123"
+        "contrasena": "axelguevar123",
+        "rol": "reclutador"
     },
     {
+        "url_perfil": "https://randomuser.me/api/portraits/men/62.jpg",
         "nombre_usuario": "Appcell11",
-        "contrasena": "axelguevar123"
+        "contrasena": "axelguevar123",
+        "rol": "profesional"
     }
 ]
